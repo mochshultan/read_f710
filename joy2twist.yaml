@@ -1,0 +1,34 @@
+# joy2twist.yaml — Logitech F710 configuration for joy2twist ROS 2 node
+# Reference: https://husarion.com/tutorials/ros-equipment/gamepad-f710/
+#
+# Make sure the controller is in XInput mode (switch on front set to 'X').
+#
+# Usage:
+#   ros2 run <package> joy2twist_node --ros-args --params-file joy2twist.yaml
+
+/**:
+  ros__parameters:
+
+    # Maximum velocity at each speed tier (m/s for linear, rad/s for angular)
+    linear_velocity_factor:
+      fast:    1.0    # RT held down
+      regular: 0.5    # default (LB held, no modifier)
+      slow:    0.2    # RB held
+
+    angular_velocity_factor:
+      fast:    1.0
+      regular: 0.5
+      slow:    0.2
+
+    # Axis / button index map — XInput mode (F710 switch = 'X')
+    # Axis indices:  LX=0, LY=1, LT=2, RX=3, RY=4, RT=5
+    # Button indices: A=0, B=1, X=2, Y=3, LB=4, RB=5, BACK=6, START=7, L3=8, R3=9
+    button_index_map:
+      axis:
+        linear_x:  1   # Left stick Y  → forward / back
+        linear_y:  0   # Left stick X  → strafe (omni-directional robots only)
+        angular_z: 3   # Right stick X → rotation
+
+      dead_man_switch: 4   # LB — must be held to publish any velocity
+      fast_mode:       5   # RT (axis 5, threshold > 0.5 normalized)
+      slow_mode:       5   # RB button
