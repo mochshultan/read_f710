@@ -1,4 +1,4 @@
-# Logitech F710 Gamepad Monitor (xox.py)
+# Logitech F710 Gamepad Monitor (hud_f710.py)
 
 Real-time HUD display untuk Logitech F710 gamepad. Menampilkan status analog sticks, triggers, buttons, dan D-pad dengan visual yang jelas menggunakan `rich` library.
 
@@ -22,8 +22,11 @@ pip install pygame rich
 ### Daftar File
 
 ```
-xox.py              — Script utama
-f710_mapping.json   — Mapping terkalibrai (auto-generated)
+hud_f710.py         — Script utama HUD monitor
+debug_triggers.py   — Debug raw axis/button/hat values
+f710_mapping.json   — Mapping terkalibrasi (auto-generated)
+joy2twist_node.py   — ROS 2 Joy → Twist converter (optional)
+joy2twist.yaml      — Contoh konfigurasi ROS 2
 README.md           — Dokumentasi ini
 ```
 
@@ -32,7 +35,7 @@ README.md           — Dokumentasi ini
 ### Mode HUD Normal (Rekomendasi)
 
 ```bash
-python xox.py
+python hud_f710.py
 ```
 
 Menampilkan live HUD dengan:
@@ -46,7 +49,7 @@ Menampilkan live HUD dengan:
 ### Mode Kalibrasi
 
 ```bash
-python xox.py calibrate
+python hud_f710.py calibrate
 ```
 
 Wizard interaktif yang memandu Anda menekan setiap tombol dan menggerakkan setiap axis. Hasil pemetaan disimpan ke `f710_mapping.json` dan digunakan otomatis di run berikutnya.
@@ -60,13 +63,13 @@ Wizard interaktif yang memandu Anda menekan setiap tombol dan menggerakkan setia
 ### Mode Show Indices
 
 ```bash
-python xox.py indices
+python hud_f710.py indices
 ```
 
 Atau:
 
 ```bash
-python xox.py show-indices
+python hud_f710.py show-indices
 ```
 
 Print semua axis & button index mentah dari device. Berguna untuk debugging jika kalibrasi gagal.
@@ -87,13 +90,13 @@ Raw axis values (gerakkan stick/trigger untuk identifikasi):
 ### Force Preset
 
 ```bash
-python xox.py direct
+python hud_f710.py direct
 ```
 
 Paksa mode DirectInput (aman untuk Linux/ROS2).
 
 ```bash
-python xox.py xinput
+python hud_f710.py xinput
 ```
 
 Paksa mode XInput.
@@ -174,18 +177,18 @@ Menampilkan arrow directional:
 
 1. Jalankan kalibrasi ulang:
    ```bash
-   python xox.py calibrate
+   python hud_f710.py calibrate
    ```
 
 2. Atau hapus `f710_mapping.json` dan jalankan ulang (auto-detect):
    ```bash
    rm f710_mapping.json
-   python xox.py
+   python hud_f710.py
    ```
 
 3. Lihat index mentah untuk debugging:
    ```bash
-   python xox.py indices
+   python hud_f710.py indices
    ```
 
 ### `rich` library error
