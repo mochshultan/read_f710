@@ -106,7 +106,7 @@ F710_XINPUT = {
 }
 
 SCRIPT_DIR    = os.path.dirname(os.path.abspath(__file__))
-MAPPING_FILE  = os.path.join(SCRIPT_DIR, "f710_mapping.json")
+MAPPING_FILE  = os.path.join(SCRIPT_DIR, "config/f710_mapping.json")
 DEAD_ZONE     = 0.08
 POLL_INTERVAL = 0.01
 
