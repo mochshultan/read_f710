@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>f710_joy2twist</name>
+  <version>0.0.1</version>
+  <description>Joy to Twist publisher for Logitech F710 (publishes to twist_mux input topic)</description>
+  <maintainer email="maintainer@example.com">Maintainer</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+
+  <exec_depend>rclpy</exec_depend>
+
+</package>

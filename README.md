@@ -12,7 +12,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/mochshultan/read_f710?style=for-the-badge)](LICENSE)
 
-**A Head-Up Display (HUD) and utility for real-time monitoring and debugging of Logitech F710 joystick input, with ROS 2 integration.**
+**A CLI Head-Up Display (HUD) and utility for real-time monitoring and debugging of Logitech F710 joystick input, with ROS 2 integration.**
 
 </div>
 

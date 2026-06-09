@@ -1,0 +1,12 @@
+# Example twist_mux configuration: add /cmd_vel_joy as a high-priority source.
+# This is an example — adapt to your twist_mux version and field names.
+topics:
+  - name: joystick
+    topic: /cmd_vel_joy
+    timeout: 0.5
+    priority: 50
+    short_desc: "Logitech F710 (joy)"
+  - name: teleop
+    topic: /cmd_vel_teleop
+    timeout: 0.5
+    priority: 10
