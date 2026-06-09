@@ -321,7 +321,7 @@ def make_hud(js_name, cfg, js):
     )
     return Panel(Group(header, inner),
                  title="[bold]Logitech F710 HUD[/bold]",
-                 subtitle="husarion.com/tutorials/ros-equipment/gamepad-f710",
+                 subtitle="https://github.com/mochshultan/read_f710",
                  box=box.ROUNDED, border_style="bright_blue")
 
 
